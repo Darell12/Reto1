@@ -1,0 +1,16 @@
+{
+    "perfiles":[
+    {  
+        "nombre": "Pepe",
+        "usuarios": "01",
+        "password": "10"
+    },
+    {
+        "nombre": "Juan",
+        "password": "02",
+        "usuarios": "03"
+    }
+]
+ 
+
+}
