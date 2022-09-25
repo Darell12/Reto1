@@ -1,10 +1,11 @@
 import React from 'react'
+import { useState } from 'react';
+import swal from 'sweetalert';
 
-const Formu = ({ingresoN, setIngresoN, bd, setBd, nav, setNav, ingresoP, setIngresoP}) => {
+const Formu = ({ingresoN, setIngresoN, ingresoP, setIngresoP,  check, setCheck, expresion, setExpresion}) => {
 
 let usuario = "45";
 let pass = "54"
-
 
 const handleSubmit = (e) => {
     e.preventDefault();
@@ -12,8 +13,10 @@ const handleSubmit = (e) => {
     console.log(ingresoN, ingresoP)
     if (ingresoN.value === usuario && ingresoP.value === pass) {
       //captcha
-      console.log("Sesión iniciada")
+      setCheck(!check);
+      handlecaptcha();
     } else {
+      swal({icon: "error",title: "¡Error!", text: "Nombre de usuario o contrseña incorrecta"})
       console.log("Error Intente nuevamente")
     }
   }
@@ -27,8 +30,14 @@ const handleSubmit = (e) => {
   }
 
   const handlecaptcha = (e) => {
-
+    let termino1 = ingresoN.value.slice(0,1);
+    let termino2 = ingresoP.value.slice(0,1);
+    setExpresion(termino1+ "+" +termino2)
+    console.log(termino1 + "+" + termino2)
+    console.log(expresion)    
+    console.log("El estado es: " + check)
   }
+
 
   return (
     <>
@@ -49,6 +58,8 @@ const handleSubmit = (e) => {
         <input type="password" className='input' value={ingresoP.value} onChange={handleChangeP} required=""/>
         <label htmlFor="">Contraseña:</label>
         </div> 
+
+        <input type="submit" value="" className='invisible'/>
         
       <a href="" onClick={handleSubmit}>
         <span></span>
