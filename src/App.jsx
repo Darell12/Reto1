@@ -2,7 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
 import Formu from './assets/components/Formu'
-import Catpcha from './assets/components/catpcha'
+import Catpcha from './assets/components/Catpcha'
 
 function App() {
   const [ingresoP, setIngresoP] = useState("")
