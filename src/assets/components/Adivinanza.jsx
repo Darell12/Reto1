@@ -19,7 +19,8 @@ const [aleatorio, setAleatorio] = useState(Math.floor(Math.random() * 10))
 
       const handleReiniciar = (e) => {
         e.preventDefault();
-       setAleatorio((Math.floor(Math.random() * 10)))
+       setAleatorio((Math.floor(Math.random() * 11)))
+       console.log(aleatorio);
        setCount(1)
        setNumero("")
        swal({icon: "warning",title: "¡Tengo un nuevo numero para ti!"})
@@ -59,7 +60,7 @@ const [aleatorio, setAleatorio] = useState(Math.floor(Math.random() * 10))
         <span></span>
         <span></span>
         <span></span>
-        Nuevo Numero//Nuevo Contador
+        Quiero otro reto
       </a>
       <a href="" onClick={handleSubmit}>
         <span></span>
