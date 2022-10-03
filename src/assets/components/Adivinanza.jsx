@@ -1,6 +1,7 @@
 import React from 'react'
 import Nav from './Nav'
 import { useState } from 'react'
+import swal from 'sweetalert';
 
 const Adivinanza = ({}) => {
 
@@ -11,13 +12,17 @@ const [aleatorio, setAleatorio] = useState(Math.floor(Math.random() * 10))
    
 
     const handleChangeN = (e) => {
+      e.preventDefault();
         setNumero({value:e.target.value})
         console.log(aleatorio)
       }
 
       const handleReiniciar = (e) => {
+        e.preventDefault();
        setAleatorio((Math.floor(Math.random() * 10)))
        setCount(1)
+       setNumero("")
+       swal({icon: "warning",title: "¡Tengo un nuevo numero para ti!"})
       }
 
       const handleSubmit = (e) => {
@@ -25,17 +30,17 @@ const [aleatorio, setAleatorio] = useState(Math.floor(Math.random() * 10))
         console.log("se previno el default")
         if (Number(numero.value)>aleatorio && Number(numero.value)<=10) {
             setCount(count+1)
-            return swal({icon: "success",title: "Adivinaste!", text: "Tan solo en "+count+ " intentos " })
+            return swal({icon: "error",title: "¡Te pasate!", text: "Intantalo otra vez" })
             
         } else if (Number(numero.value)<aleatorio && Number(numero.value)>0) {
           setCount(count+1)
-           return swal("Estas por debajo")
+           return swal({icon: "error",title: "¡Estas por debajo!", text: "Intentalo otra vez" })
        } else if (Number(numero.value)>10 || Number(numero.value)<0) {
            setCount(count+1)
            return swal("Fuera de rango")
        } else if (Number(numero.value)===aleatorio) {
            setCount(count+1)
-            return swal("Adivinaste con " +count+ " intentos")
+            return swal({icon: "success",title: "¡Adivinaste!", text: "Tan solo en "+count+ " intentos " })
        }
       }
   return (
@@ -45,7 +50,7 @@ const [aleatorio, setAleatorio] = useState(Math.floor(Math.random() * 10))
         <form action="" onSubmit={handleSubmit}>
 
         <h2>Adivinanza</h2>
-        <label htmlFor="">Ingrese un numero entre 0 y 10</label>
+        <label htmlFor="" cla>Ingrese un numero entre 0 y 10</label>
         <div className="user-box">
         <input type="text" className='input' value={numero.value} onChange={handleChangeN}/>
         </div>

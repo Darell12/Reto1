@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import swal from 'sweetalert';
-import '../components/form.css'
+
 
 const Formu = ({ingresoN, setIngresoN, ingresoP, setIngresoP,  check, setCheck, expresion, setExpresion}) => {
 
@@ -44,7 +44,6 @@ const handleSubmit = (e) => {
   return (
     <>
     <div className="contenedor">
-     <h1>ICR Corp.</h1> <br />
     <div className="login-box">
       <h2>Log In</h2>
       <form action="" onSubmit={handleSubmit}>

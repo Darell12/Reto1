@@ -225,185 +225,71 @@
   }
   
 
+  /* This is compiled code
 
+See the source code here https://github.com/tonkec/text_hover_effects
 
-  :root{
-    --clr-hot:rgba(24, 24, 24, 0.7);
-    --clr-cool:rgb(46,189,200);
-    --clr-go:rgb(90,245,125);
-    --clr-alarm:rgb(232,48,213);
-    --clr-logo:hsl(199,82%,45%);
-    --clr-title:hsl(260,73%,54%);
-    --clr-surface:hsl(0,0%,100%);
-  
-  }
+*/
 
-*,*::after,*::before{
-    box-sizing: border-box;
+/* Compiled code and reset */
+
+/* https://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+nav {
+  margin-top: 0px;
+  padding: 24px;
+  text-align: center;
+  font-family: Raleway;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
-body{
-  font-family: 'Urbanist', sans-serif;
-  font-weight:500; 
-  margin:0;
-}
-.content {
-  height: 200vh;
-  background-image:url(//i.picsum.photos/id/1072/3872/2592.jpg?hmac=I5d8vixhn6Ne9Ao1YQdtHfxS2YKNyx6_Bu8N_V1-ovk);
-  background-blend-mode:multiply;
-  background-size:cover;
-  display:grid;
-  place-items:center;
+#nav-2 {
+  background: #202736;
 }
 
-/*header starts here */
-header {
-  width:100%;
-  background: var(--clr-hot);
-  z-index: 999;
-  text-align:center;
-  
-  
+
+
+.link-2 {
+  transition: 0.3s ease;
+  background: #202736;
+  color: #ffffff;
+  font-size: 20px;
+  text-decoration: none;
+  border-top: 4px solid #202736;
+  border-bottom: 4px solid #202736;
+  padding: 20px 0;
+  margin: 0 20px;
+}
+.link-2:hover {
+  border-top: 4px solid #ffffff;
+  border-bottom: 4px solid #ffffff;
+  padding: 6px 0;
 }
 
-nav{
-  position:absolute;
-  text-align:left;
-  top:100%;
-  background: var(--clr-hot);
-  width:100%;
-  
-  transform: scale(1, 0);
-  transform-origin: top;
-  transition: transform 400ms ease-in-out;
-}
-nav ul {
-  list-style:none;
-  margin:0;
-  padding:0;  
-}
-
-nav li {
-  margin-left: 1em;
-  margin-bottom: 1em;
-}
-
-li a{
-  text-transform: uppercase;
-  font-family: 'Cabin', sans-serif;
-  color: rgb(227, 227, 227);
-}
-
-a:hover {
-  color:var(--clr-title);
-  cursor:pointer;
-}
-
-.nav-toggle{
-  display:none;
-}
-
-.nav-toggle:checked ~ nav{  
-  transform: scale(1,1);
-  
-}
-.nav-toggle:checked ~ nav a{
-  opacity:1;
-  transition: all .1s ease-in-out .200s ; 
-}
-
-nav a {
-  opacity:0;
-  transform: scale(1,0);
-  transition: opacity 150ms ease-in-out;
-}
-
-.nav-toggle-label{
-  position:absolute;
+label {
   top:0;
-  left:0;
-  margin-left: 1em;
-  height:100%;
-  display:flex;
-  place-items:center;  
-}
-.label-span, 
-.label-span::before,
-.label-span::after {
-  height:4px;
-  width:30px;
-  border:1px solid black;
-  background:black;
-  border-radius:20%;
-}
-.label-span::before,
-.label-span::after{
-  position:absolute;
-  content: '';
-  left: 0px;
-}
-.label-span::before{
-  top: 30px;  
-}
-.label-span::after{
-  bottom: 30px;
-}
-.label-span:hover,
-.label-span:hover::after,
-.label-span:hover::before{
-  cursor:pointer;
-  border:1px solid var(--clr-title);
-  background:var(--clr-title);  
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
 }
 
-@media screen and (min-width:800px) {
-  .nav-toggle-label{
-    display:none;
-  }
-  
-  header{
-    display:grid;
-    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
-    margin-bottom: 525px;
-  }
-  nav{
-    all:unset;
-    grid-column: 3/4;
-    display: flex;
-    justify-content: flex-end;
-    place-items:center;    
-  }
-  .logo{
-    grid-column: 2/3;
-  }
-  nav li{
-    margin-left: 3em;
-    margin-bottom: 0;
-  }
-  nav ul {
-    display: flex;
-    justify-content: flex-end;
-  }
-  nav a {
-    opacity:1;
-    position:relative;
-  }
-  nav a::before {
-    position:absolute;
-    content:'';
-    height:4px;
-    width:100%;    
-    top:-10px;
-    right:0;
-    background:black;    
-    transform:scale(0,1);
-    transition: transform ease-in-out 250ms;
-  }
-  nav a:hover::before {
-    transform:scale(1,1);
-  }
+.catpcha{
+  justify-content: center;
+  margin: 1px;
+  background-color: #141e30;
+  display: flex;
+  flex-direction: column;
 }
 
-h1{
-  margin: 0%;
+.catpcha-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 3px;
 }

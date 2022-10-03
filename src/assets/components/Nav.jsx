@@ -64,26 +64,37 @@ if (Number(num)>aleatorio && Number(num)<=10) {
 
     return (
 
-<div>
+// <div>
 
-      <header className='navbar'>
-        <div className="logo">
-          <h1>ICR. CORP</h1>           
-        </div>
-        <input type="checkbox" id="nav-toggle" className="nav-toggle" ></input>
-        <label for="nav-toggle" className = "nav-toggle-label"> 
-          <span className="label-span"></span> 
-        </label>
-        <nav> 
-          <ul>
-            <li><a>Home "en trabajo"</a></li>
-            <li><a onClick={handleAdivinanza}>Adivianza</a></li>
-            <li><a onClick={handleCerrarSesion}>Log out</a></li>  
-          </ul>
-        </nav>
-      </header>
-      </div>
+//       <header className='navbar'>
+//         <div className="logo">
+//           <h1>ICR. CORP</h1>           
+//         </div>
+//         <input type="checkbox" id="nav-toggle" className="nav-toggle" ></input>
+//         <label for="nav-toggle" className = "nav-toggle-label"> 
+//           <span className="label-span"></span> 
+//         </label>
+//         <nav> 
+//           <ul>
+//             <li><a>Home "en trabajo"</a></li>
+//             <li><a onClick={handleAdivinanza}>Adivianza</a></li>
+//             <li><a onClick={handleCerrarSesion}>Log out</a></li>  
+//           </ul>
+//         </nav>
+//       </header>
+//       </div>
+<>
 
+
+<nav id="nav-2">
+  <a class="link-2" href="#">Home(inwork)</a>
+  <a class="link-2" onClick={handleAdivinanza}>Adivianza</a>
+  <a class="link-2" href="#">Contact</a>
+  <a class="link-2" onClick={handleCerrarSesion}>Log out</a>
+</nav>
+
+
+</>
 
   )
 }

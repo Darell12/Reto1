@@ -28,15 +28,23 @@ const Catpcha = ({expresion, setExpresion, check, setCheck, user, setUser}) => {
     const handleChange = (e) => {
         ingreso = ({value:e.target.value})
     }
+
+
     return (
     <>
-    <div className='login-box'>
+    <div className='login-box catpcha'>
     <h2>Catpcha </h2>
 
-    <form action="" onSubmit={handleValidar}>
+    <form action="" onSubmit={handleValidar} className="catpcha-form">
         <label htmlFor="">Digite el resultado de la siguiente: {expresion}</label>
         <input type="number" onChange={handleChange}/>
-        <input type="submit" value="submit" />
+        <a href="" onClick={handleValidar}>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        submit
+      </a>
     </form>
 
     </div>
