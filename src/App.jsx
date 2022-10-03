@@ -3,6 +3,9 @@ import reactLogo from './assets/react.svg'
 import './App.css'
 import Formu from './assets/components/Formu'
 import Catpcha from './assets/components/Catpcha'
+import Menu from './assets/components/Menu'
+import Nav from './assets/components/Nav'
+import Adivinanza from './assets/components/Adivinanza'
 
 function App() {
   const [ingresoP, setIngresoP] = useState("")
@@ -11,12 +14,15 @@ function App() {
   const [nav, setNav] = useState("");
   const [check, setCheck] = useState(false)
   const [expresion, setExpresion] = useState("")
+  const [user, setUser] = useState(true)
+  const [adivinanza, setAdivinanza] = useState(false);
 
 
   return (
     <div className="App">
 
-    
+
+    {user?
     <Formu
     ingresoN ={ingresoN}
     setIngresoN ={setIngresoN}
@@ -30,7 +36,17 @@ function App() {
     setCheck = {setCheck}
     expresion = {expresion}
     setExpresion = {setExpresion}
-    />
+    user = {user}
+    setUser = {setUser}
+    />: <Menu
+    user = {user}
+    setUser = {setUser}
+    adivinanza = {adivinanza}
+    setAdivinanza = {setAdivinanza}
+    />}
+
+   {adivinanza? <Adivinanza/
+   >: ""}
 
 <div className='contenedor-catpcha'>
   {check?
@@ -39,6 +55,8 @@ function App() {
     setExpresion = {setExpresion}
     check = {check}
     setCheck = {setCheck}
+    user = {user}
+    setUser = {setUser}
     />: ""
   }
 </div>

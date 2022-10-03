@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import swal from 'sweetalert';
+import '../components/form.css'
 
 const Formu = ({ingresoN, setIngresoN, ingresoP, setIngresoP,  check, setCheck, expresion, setExpresion}) => {
 
@@ -17,7 +18,8 @@ const handleSubmit = (e) => {
       handlecaptcha();
     } else {
       swal({icon: "error",title: "¡Error!", text: "Nombre de usuario o contrseña incorrecta"})
-      console.log("Error Intente nuevamente")
+      console.log("Error Intente nuevamente");
+      
     }
   }
 
@@ -41,6 +43,7 @@ const handleSubmit = (e) => {
 
   return (
     <>
+    <div className="contenedor">
      <h1>ICR Corp.</h1> <br />
     <div className="login-box">
       <h2>Log In</h2>
@@ -70,6 +73,7 @@ const handleSubmit = (e) => {
       </a>
 
         </form>
+    </div>
     </div>
     </>
   )

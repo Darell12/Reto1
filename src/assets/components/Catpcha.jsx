@@ -1,7 +1,7 @@
 import React from 'react'
 import swal from 'sweetalert';
 
-const Catpcha = ({expresion, setExpresion, check, setCheck}) => {
+const Catpcha = ({expresion, setExpresion, check, setCheck, user, setUser}) => {
  
     let respuesta = eval(expresion);
     let ingreso = 0;
@@ -16,7 +16,10 @@ const Catpcha = ({expresion, setExpresion, check, setCheck}) => {
         if (Number(ingreso.value) === respuesta){
             console.log("inicio correcto")
             setCheck(!check)
+            setUser(!user)
             swal({icon: "success",title: "¡Inicio de Sesión Exitoso!"})
+            console.log(check)
+            console.log(user)
         } else {
             
         }
